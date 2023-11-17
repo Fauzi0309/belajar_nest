@@ -10,6 +10,8 @@ import configuration from './config/configuration';
 import * as pino from 'pino';
 // import { SeederModule } from '#/seeder/seeder.module';
 import { ReviewsModule } from './reviews/reviews.module';
+// import { AuthService } from './auth/auth.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -98,6 +100,8 @@ import { ReviewsModule } from './reviews/reviews.module';
     UsersModule,
     HealthModule,
     ReviewsModule,
+    AuthModule,
   ],
+  // providers: [AuthService],
 })
 export class AppModule {}

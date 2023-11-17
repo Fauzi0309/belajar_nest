@@ -1,9 +1,9 @@
 import { User } from "#/users/entities/user.entity";
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
 export class Reviews {
-    @PrimaryColumn('uuid')
+    @PrimaryGeneratedColumn('uuid')
     id: string;
     
     @Column({
@@ -33,5 +33,5 @@ export class Reviews {
       deletedAt: Date;
 
     @ManyToOne(() => User, (user) => user.reviews)
-    user: User[];
+    user: User;
 }

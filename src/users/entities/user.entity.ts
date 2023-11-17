@@ -15,6 +15,17 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column({nullable: true})
+  salt: string;
+
+  @Column({
+    unique: true,
+  })
+  username: string;
+
+  @Column()
+  password: string; 
+
   @Column()
   firstName: string;
 
@@ -46,5 +57,5 @@ export class User {
   version: number;
 
   @OneToMany(() => Reviews, (reviews) => reviews.user)
-  reviews: Reviews;
+  reviews: Reviews[];
 }
